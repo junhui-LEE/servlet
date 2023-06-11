@@ -14,11 +14,11 @@ public class RequestParamServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("[전체 파라미터 조회] - start");
 
-        Enumeration<String> parameterNames = request.getParameterNames();
-        while(parameterNames.hasMoreElements()){
-            String paramName = parameterNames.nextElement();
-            System.out.println(paramName + "=" + request.getParameter(paramName));
-        }
+//        Enumeration<String> parameterNames = request.getParameterNames();
+//        while(parameterNames.hasMoreElements()){
+//            String paramName = parameterNames.nextElement();
+//            System.out.println(paramName + "=" + request.getParameter(paramName));
+//        }
 
         request.getParameterNames().asIterator()
                 .forEachRemaining(paramName -> System.out.println(paramName + "=" + request.getParameter(paramName)));
